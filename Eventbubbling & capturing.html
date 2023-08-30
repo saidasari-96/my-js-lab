@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Saikumar</title>
+    <style>
+        div {
+            min-width: 100px;
+            min-height: 100px;
+            padding: 30px;
+            border: 1px solid black;
+        }
+
+        p {
+            border: 1px solid blue;
+        }
+
+        pre {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="grandParent">
+        <p id="parent">
+        <button id="child">
+        </button>
+        </p>
+    </div>
+    <script>
+        const grandParent = document.querySelector("#grandParent");
+        const parent = document.querySelector("#parent");
+        const child = document.querySelector("#child");
+        parent.addEventListener("click", () => { console.log("parent clicked") });
+        child.addEventListener("click", () => { console.log("child clicked") });
+        grandParent.addEventListener("click", (event) => {
+            if (event.currentTarget.tagName == "DIV") {
+                event.stopPropagation();
+            }
+            console.log("grandparent clicked")
+        });
+    </script>
+</body>
