@@ -1,17 +1,19 @@
-// // function sum(currentNumber) {
-// //   let total = currentNumber;
-// //   var fun = function (nextNumber) {
-// //     if (nextNumber) {
-// //       total += nextNumber;
-// //       return fun;
-// //     } else {
-// //       return total;
-// //     }
-// //   };
-// //   return fun;
-// // }
+// function sum(currentNumber) {
+//   let total = currentNumber;
+//   var fun = function (nextNumber) {
+//     if (nextNumber) {
+//       total += nextNumber;
+//       return fun;
+//     } else {
+//       return total;
+//     }
+//   };
+//   return fun;
+// }
 
-// // console.log(sum(5)(6)(8)());
+const sum = (a) => (b) => b ? sum(a + b) : a;
+
+console.log(sum(5)(6)(8)());
 
 // var sum = function (a) {
 //   return function (b) {
@@ -93,22 +95,22 @@
 //   };
 // console.log(sum(5)(6)(8));
 
-const sum = (a) => {
-  const add = (b) => sum(a + b);
+// const sum = (a) => {
+//   const add = (b) => sum(a + b);
 
-  add.valueOf = () => a;
+//   add.valueOf = () => a;
 
-  return add;
-};
+//   return add;
+// };
 
 // Usage:
-const result = sum(5)(6)(8);
-console.log(result); // This will print 19
+// const result = sum(5)(6)(8);
+// console.log(result); // This will print 19
 
-function myVal() {
-  return 125;
-}
-myVal.prototype.valueOf = function () {
-  return "Hello";
-};
-console.log(myVal + 1);
+// function myVal() {
+//   return 125;
+// }
+// myVal.prototype.valueOf = function () {
+//   return "Hello";
+// };
+// console.log(myVal + 1);
